@@ -1,0 +1,16 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_ecommerce_lariosanderson
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      TZ: America/Lima
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./db_ecommerce_lariosanderson.sql:/docker-entrypoint-initdb.d/01_db_ecommerce_lariosanderson.sql:ro
+      - mysql_data_lariosanderson:/var/lib/mysql
+
+volumes:
+  mysql_data_lariosanderson:
