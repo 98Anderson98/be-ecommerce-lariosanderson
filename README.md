@@ -51,3 +51,11 @@ SELECT * FROM detalle_pedido;
 SELECT p.id, p.cliente, p.fecha_compra, p.estado_pedido, p.metodo_pago, pr.nombre, d.cantidad, d.precio_unitario, d.subtotal, p.monto_total
 FROM pedidos p JOIN detalle_pedido d ON d.pedido_id = p.id JOIN productos pr ON pr.id = d.producto_id;
 ```
+
+## Ejecución
+
+1. `docker compose up -d`
+2. En Spring Tools: Run As → Spring Boot App (puerto 8080)
+3. Importar `be-ecommerce-lariosanderson.postman_collection.json` en Postman y ejecutar primero **1. Auth**
+
+Autor: Larios Tito Anderson Fabrizzio
